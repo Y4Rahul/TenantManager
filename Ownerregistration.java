@@ -1,28 +1,42 @@
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.*;
 
 public class Ownerregistration {
 	private JFrame register;
 	private int width = 400;
 	private int height = 400;
+	private JTextField name;
+	private JTextField username;
+	private JPasswordField password;
+	private JPasswordField confirmpassword;
+	private JTextField rooms;
+	private JTextArea address;
+	private JTextField rent;
+	private JButton submit;
+	int test = 5;
 	public void create(){
 		register = new JFrame();
 		
 		JLabel Name = new JLabel("Name");
-		JTextField name = new JTextField();
+		name = new JTextField();
 		JLabel UserName = new JLabel("UserName");
-		JTextField username = new JTextField();
+		username = new JTextField();
 		JLabel Password = new JLabel("Password");
-		JPasswordField password = new JPasswordField();
+		password = new JPasswordField();
 		JLabel ConfirmPassword = new JLabel("Confirm Password");
-		JPasswordField confirmpassword = new JPasswordField();
+		confirmpassword = new JPasswordField();
 		JLabel Rooms = new JLabel("No. of Rooms");
-		JTextField rooms = new JTextField();
+		rooms = new JTextField();
 		JLabel Address = new JLabel("Address");
-		JTextArea address = new JTextArea();
+		address = new JTextArea();
 		JLabel Rent = new JLabel("Rent");
-		JTextField rent = new JTextField();
-		JButton submit = new JButton("SUBMIT");
+		rent = new JTextField();
+		submit = new JButton("SUBMIT");
 		
+		UserName.setBounds(50,30,70,10);
+		username.setBounds(140, 30, 150, 15);
 		Name.setBounds(50,50,70,10);
 		name.setBounds(140, 50, 150, 15);
 		Password.setBounds(50,70,70,10);
@@ -39,6 +53,8 @@ public class Ownerregistration {
 		
 		register.add(Name);
 		register.add(name);
+		register.add(UserName);
+		register.add(username);
 		register.add(Password);
 		register.add(password);
 		register.add(ConfirmPassword);
@@ -53,5 +69,30 @@ public class Ownerregistration {
 		register.setSize(width,height);//400 width and 500 height  
 		register.setLayout(null);//using no layout managers  
 		register.setVisible(true);//making the frame visible  
+	
+		submit.addMouseListener(new MouseAdapter()  
+		{  
+		    public void mouseClicked(MouseEvent e)  
+		    {  
+		    	RegisterOwners detail = new RegisterOwners();
+		    	if(detail.status(username.getText()))
+		    	{
+		    		System.out.println("Welcome");
+		    	}
+		    	else
+		    	{
+		    		System.out.println("ERROR");
+		    	}
+		    }  
+		});
+	
+	
 	}
+	
+	public String getUname() {  
+		return username.getText();  
+	} 
+	
+ 
+	    
 }
