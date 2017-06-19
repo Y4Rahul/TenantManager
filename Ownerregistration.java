@@ -110,7 +110,7 @@ public class Ownerregistration {
 		    public void mouseClicked(MouseEvent e)  
 		    {  
 		    	RegisterOwners detail = new RegisterOwners();
-		    	if(detail.status(username.getText()))
+		    	if(detail.status(username.getText(),name.getText(),password.getPassword(),rooms.getText(),address.getText(),rent1.getText(),rent2.getText(),rent3.getText(),rent4.getText(),roomwidth.getText(),roomheight.getText()))
 		    	{
 		    		System.out.println("Welcome");
 		    	}
