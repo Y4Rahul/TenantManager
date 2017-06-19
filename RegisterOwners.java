@@ -1,6 +1,4 @@
 import java.sql.Connection;
-import java.sql.*;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -13,7 +11,7 @@ public class RegisterOwners {
 		int check=0;
 		try{  
 			Connection con= DatabaseConnection.getConnection();    
-			statement stmt=con.createStatement();  
+			Statement stmt=con.createStatement();  
 			ResultSet rs=stmt.executeQuery("select * from ownersdetail");
 			while(rs.next())
 			{
