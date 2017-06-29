@@ -113,6 +113,8 @@ public class Ownerregistration {
 		    	if(detail.status(username.getText(),name.getText(),password.getPassword(),rooms.getText(),address.getText(),rent1.getText(),rent2.getText(),rent3.getText(),rent4.getText(),roomwidth.getText(),roomheight.getText()))
 		    	{
 		    		System.out.println("Welcome");
+		    		TenantInfo page = new TenantInfo(); 
+		    		page.TenantPage(username.getText(),rooms.getText());
 		    	}
 		    	else
 		    	{
