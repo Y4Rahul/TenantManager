@@ -5,21 +5,24 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 public class TenantInfo {  
-	          	public static void main(String args[])  
+	          	public void TenantPage(String username,String room)  
 	{  
-	          	String room="3";
 	          	JFrame f= new JFrame("Tenant Information");
 	          	JPanel panel=new JPanel();
 	            panel.setBounds(0,0,400,50); 
 	            panel.setBackground(Color.gray);
+	            panel.setLayout(null);
 	          	JButton[] Room = new JButton[Integer.parseInt(room)];
 	          	for(int i=0;i<Integer.parseInt(room);i++)
 	            {
 	          	 Room[i] = new JButton("Room"+i);
-	          	 Room[i].setBounds(20+100*i, 20, 100, 50);
+	          	 Room[i].setBounds(20+100*i, 20, 70, 50);
 	          	Room[i].addActionListener(new ActionListener() {
 	          	    public void actionPerformed(ActionEvent e) {
+	          	    	JButton pressedButton = (JButton)e.getSource();
+	          	    	pressedButton.setBackground(Color.blue);
 	          	    	System.out.println("room");
+	          	    	
 	          	    }          
 	          	 });
 	            }
