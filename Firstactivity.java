@@ -42,6 +42,11 @@ b.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent e) {
        Secondactivity page = new Secondactivity();
        boolean result = page.checklogin(user_name.getText(), String.valueOf((password.getPassword())));
+       if(result==true)
+       {
+    	   OwnerDashboard dashboard = new OwnerDashboard();
+    	   dashboard.dashboard();
+       }
        System.out.println(result);
     }          
  });
