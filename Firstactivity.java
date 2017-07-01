@@ -10,7 +10,7 @@ public class Firstactivity {
 public static void main(String[] args) {  
 JFrame f=new JFrame();//creating instance of JFrame  
 
-JLabel l = new JLabel("WELCOME");
+JLabel l = new JLabel("WELCOME Users");
 l.setBounds(width/2-30, 20, 60, 30);
 
 JLabel username = new JLabel("UserName :");
